@@ -61,13 +61,13 @@ Izmantojot lib.js būs vienkāršāk strādāt ar spēles stāvokli. Funkcijas i
 
 ```javascript
 /******************
- * Library
+ * Bibliotēka
  *****************/
 
-// COPY LIBRARY HERE.
+// IEKOPĒ BIBLIOTĒKU ŠEIT.
 
 /******************************
- * My code
+ * Kods
  ******************************/
 
 var movements = [
@@ -87,11 +87,11 @@ for (var i = 0; i < movements.length; ++i) {
     var tmpX = myPlayer.x + m[0];
     var tmpY = myPlayer.y + m[1];
    
-    // Check if can move there.
+    // Pārbauda visas debesu puses - vai var tur aiziet.
     if (canIMoveTo(gameState, tmpX, tmpY)) {
         
         var ghostsInField = 0;
-        // Check if ghosts arent there.
+        // Atmet variantus, kur blakus ir spoks..
         for (var j = 0; j < ghosts.length; ++j) {
             if (ghosts[j].x == tmpX && ghosts[j].y == tmpY) {
                 ghostsInField++;
