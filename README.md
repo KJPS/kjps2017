@@ -36,6 +36,18 @@ Programmai ir jāizvada vērtība no 0 līdz 3, kura apzīmē spēlētāja kust�
 2 - uz leju.
 3 - pa kreisi.
 
+Piemēram:
+
+```javascript
+console.log(3);
+```
+
+vai
+
+```javascript
+console.log(parseInt(Math.random() * 4));
+```
+
 ## P.S.
 
 Lūdzu neizmantojiet serveri ļaunprātīgi - atmiņas pārpildīšana tīši, neatļautu failu lasīšana un citas nevēlamas rīcības.
