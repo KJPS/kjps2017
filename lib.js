@@ -59,12 +59,15 @@ function getMyPlayer(gameState)
     return gameState.my_player;
 }
 
-function canIMoveTo(gameState, x, y)
-{
-    var myPlayer = gameState.my_player;
-    
-    if (x < 0 || x >= gameState.width
-        || y < 0 || y >= gameState.height
+/**
+ * Pārbaudīt, vai var pārvietoties no (x1, y1) uz (x2, y2).
+ */
+function canMoveTo(x1, y1, x2, y2)
+{    
+    if (x1 < 0 || x1 >= gameState.width
+        || y1 < 0 || y1 >= gameState.height
+        || x2 < 0 || x2 >= gameState.width
+        || y2 < 0 || y2 >= gameState.height
     ) {
         return false;
     }
@@ -79,7 +82,7 @@ function canIMoveTo(gameState, x, y)
     
     for (var i = 0; i < movements.length; ++i) {
         var m = movements[i];
-        if (myPlayer.x + m[0] == x && myPlayer.y + m[1] == y) {
+        if (x1 + m[0] == x2 && y1 + m[1] == y2) {
             way = i;
             break;
         }
@@ -89,5 +92,15 @@ function canIMoveTo(gameState, x, y)
         return false;
     }
     
-    return !(game.maze[myPlayer.y][myPlayer.x] & (1 << way));
+    return !(game.maze[y1][x1] & (1 << way));
+}
+
+/**
+ * Pārbaudīt, vai savs spēlētājs var pārvietoties uz x, y koordinātēm.
+ */
+function canIMoveTo(gameState, x, y)
+{
+    var myPlayer = gameState.my_player;
+    
+    return canMoveTo(myPlayer.x, myPlayer.y, x, y);
 }
