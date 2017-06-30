@@ -16,7 +16,7 @@ function getPlayers(gameState)
 {
     var players = [];
     
-    for (var i = 0; i < gameState.participants; ++i) {
+    for (var i = 0; i < gameState.participants.length; ++i) {
         var participant = gameState.participants[i];
         if (participant.discr == 'player') {
             players.push(participant);
@@ -33,7 +33,7 @@ function getGhosts(gameState)
 {
     var ghosts = [];
     
-    for (var i = 0; i < gameState.participants; ++i) {
+    for (var i = 0; i < gameState.participants.length; ++i) {
         var participant = gameState.participants[i];
         if (participant.discr == 'ghost') {
             ghosts.push(participant);
