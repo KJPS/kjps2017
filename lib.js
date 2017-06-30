@@ -92,7 +92,7 @@ function canMoveTo(gameState, x1, y1, x2, y2)
         return false;
     }
     
-    return !(game.maze[y1][x1] & (1 << way));
+    return !(gameState.maze[y1][x1] & (1 << way));
 }
 
 /**
