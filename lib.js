@@ -62,7 +62,7 @@ function getMyPlayer(gameState)
 /**
  * Pārbaudīt, vai var pārvietoties no (x1, y1) uz (x2, y2).
  */
-function canMoveTo(x1, y1, x2, y2)
+function canMoveTo(gameState, x1, y1, x2, y2)
 {    
     if (x1 < 0 || x1 >= gameState.width
         || y1 < 0 || y1 >= gameState.height
@@ -102,5 +102,5 @@ function canIMoveTo(gameState, x, y)
 {
     var myPlayer = gameState.my_player;
     
-    return canMoveTo(myPlayer.x, myPlayer.y, x, y);
+    return canMoveTo(gameState, myPlayer.x, myPlayer.y, x, y);
 }
