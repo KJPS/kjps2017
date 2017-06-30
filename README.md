@@ -106,6 +106,55 @@ for (var i = 0; i < movements.length; ++i) {
 
 console.log(canMoveToWays.length ? canMoveToWays[parseInt(Math.random() * canMoveToWays.length)] : 0);
 ```
+## GameState struktūra
+```javascript
+{
+   "movements":[]
+   "id":354,
+   "name":"htrw",
+   "created_at":"2017-06-30T09:40:57+03:00",
+   "started_at":"2017-06-30T09:41:52+03:00",
+   "height":10,
+   "width":10,
+   "seed":0,
+   "iteration":0,
+   "participants":[
+      {
+         "id":1323,
+         "name":"ghost_0",
+         "color":"16711680",
+         "dead":false,
+         "points":0,
+         "x":3,
+         "y":6,
+         "discr":"ghost"
+      },
+      ...
+   ],
+   "maze":[
+      [],
+      [],
+    ...
+   ],
+   "points":[
+      [2, 1, 2, 1, 1, 2, 0, 3, 1, 0 ... ],
+      [ 2, 2, 1, 2, 3, 0, 3, 2, 1, 2 ...],
+      ...
+   ],
+   "my_player":{
+      "id":1326,
+      "name":"ht4r",
+      "color":"0x00ff00",
+      "dead":false,
+      "points":0,
+      "x":0,
+      "y":6,
+      "code":""
+      "way":2,
+      "discr":"player"
+   }
+}
+```
 
 ## P.S.
 
