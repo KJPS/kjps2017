@@ -27,6 +27,13 @@ Spēlētājiem kods jāraksta JavaScript jeb Node.JS valodā. Node.JS ir servera
 
 ### Programmas ievaddati
 
+Spēlētājs no STDIN (jeb konsoles) var nolasīt dotos ievaddatus, kuri tiek padoti json formātā.
+
+```javascript
+// Iekopējiet savā kodā bibliotēku lib.js
+var gameState = readGameState();
+```
+
 ### Programmas izvaddati
 
 Programmai ir jāizvada vērtība no 0 līdz 3, kura apzīmē spēlētāja kustības virzienu nākamajā iterācijā.
@@ -46,6 +53,58 @@ vai
 
 ```javascript
 console.log(parseInt(Math.random() * 4));
+```
+
+### Bibliotēka
+
+Izmantojot lib.js būs vienkāršāk strādāt ar spēles stāvokli. Funkcijas ir aprakstītas failā. To pielietojums varētu būt, piemeram, šāds.
+
+```javascript
+/******************
+ * Library
+ *****************/
+
+// COPY LIBRARY HERE.
+
+/******************************
+ * My code
+ ******************************/
+
+var movements = [
+        [0, -1],
+        [1, 0],
+        [0, 1],
+        [-1, 0]
+];
+
+var gameState = readGameState();
+var myPlayer = getMyPlayer(gameState);
+var ghosts = getGhosts(gameState);
+var canMoveToWays = [];
+
+for (var i = 0; i < movements.length; ++i) {
+    var m = movements[i];
+    var tmpX = myPlayer.x + m[0];
+    var tmpY = myPlayer.y + m[1];
+   
+    // Check if can move there.
+    if (canIMoveTo(gameState, tmpX, tmpY)) {
+        
+        var ghostsInField = 0;
+        // Check if ghosts arent there.
+        for (var j = 0; j < ghosts.length; ++j) {
+            if (ghosts[j].x == tmpX && ghosts[j].y == tmpY) {
+                ghostsInField++;
+            }
+        }
+   
+        if (ghostsInField == 0) {
+            canMoveToWays.push(i);
+        }
+    }
+}
+
+console.log(canMoveToWays.length ? canMoveToWays[parseInt(Math.random() * canMoveToWays.length)] : 0);
 ```
 
 ## P.S.
