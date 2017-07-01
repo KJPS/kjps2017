@@ -114,8 +114,8 @@ console.log(canMoveToWays.length ? canMoveToWays[parseInt(Math.random() * canMov
    "name":"htrw",
    "created_at":"2017-06-30T09:40:57+03:00",
    "started_at":"2017-06-30T09:41:52+03:00",
-   "height":10,
-   "width":10,
+   "height":2,
+   "width":2,
    "seed":0,
    "iteration":0,
    "participants":[
@@ -125,21 +125,19 @@ console.log(canMoveToWays.length ? canMoveToWays[parseInt(Math.random() * canMov
          "color":"16711680",
          "dead":false,
          "points":0,
-         "x":3,
-         "y":6,
+         "x":0,
+         "y":1,
          "discr":"ghost"
       },
       ...
    ],
    "maze":[
-      [],
-      [],
-    ...
+      [2, 1],
+      [0, 0],
    ],
    "points":[
-      [2, 1, 2, 1, 1, 2, 0, 3, 1, 0 ... ],
-      [ 2, 2, 1, 2, 3, 0, 3, 2, 1, 2 ...],
-      ...
+      [2, 1],
+      [ 3, 0]
    ],
    "my_player":{
       "id":1326,
@@ -147,8 +145,8 @@ console.log(canMoveToWays.length ? canMoveToWays[parseInt(Math.random() * canMov
       "color":"0x00ff00",
       "dead":false,
       "points":0,
-      "x":0,
-      "y":6,
+      "x":1,
+      "y":0,
       "code":""
       "way":2,
       "discr":"player"
