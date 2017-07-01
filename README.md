@@ -128,8 +128,18 @@ console.log(canMoveToWays.length ? canMoveToWays[parseInt(Math.random() * canMov
          "x":0,
          "y":1,
          "discr":"ghost"
-      },
-      ...
+      }, {
+         "id":1326,
+         "name":"ht4r",
+         "color":"0x00ff00",
+         "dead":false,
+         "points":0,
+         "x":1,
+         "y":0,
+         "code":""
+         "way":2,
+         "discr":"player"
+       }
    ],
    "maze":[
       [2, 1],
